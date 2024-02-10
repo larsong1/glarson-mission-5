@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<script>
+    function CalculateCost() {
+        let numHours = parseInt($("#numHours").val());
+
+        if (!numHours) {
+            alert("Please enter a numeric value");
+            $("#numHours").val("");
+        } else if (numHours < 0) {
+            alert("Please enter a positive number");
+            $("#numHours").val("");
+        } else {
+            $("#costDisplay").val(numHours * 37);
+        }
+    }
+</script>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="row">
+            <h1>BASEBALL LESSONS</h1>
+            <label>Number of Hours Needed</label>
+            <input id="numHours" />
+            <br />
+            <label>Rate</label>
+            <input value="$37 per hour" disabled/>
+            <br />
+            <button onclick="CalculateCost()">Calculate Training Cost</button>
+            <br />
+            <label>Training Cost</label>
+            <input id="costDisplay" disabled />
+        </div>
+    </div>
+</div>
